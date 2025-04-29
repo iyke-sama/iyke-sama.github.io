@@ -1,10 +1,63 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Iyke-sama.github io</title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Girlfriend?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        .message {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .no {
+            background-color: white;
+            color: black;
+        }
+        .no:hover {
+            transform: translateX(50px);
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="message">Will you be my Girlfriend? ❤️</div>
+    <div class="buttons">
+        <button class="yes" onclick="alert('Yay! ❤️')">Yes</button>
+        <button class="no" onmouseover="moveNoButton()">No</button>
+    </div>
+    <script>
+        function moveNoButton() {
+            const noButton = document.querySelector('.no');
+            const randomX = Math.random() * (window.innerWidth - 100);
+            const randomY = Math.random() * (window.innerHeight - 50);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        }
+    </script>
 </body>
 </html>
